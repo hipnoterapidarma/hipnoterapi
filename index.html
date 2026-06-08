@@ -1,0 +1,1371 @@
+﻿<!DOCTYPE html>
+<html lang="id">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Hipnoterapi Bandung — Pulih dari Dalam</title>
+<meta name="description" content="Layanan hipnoterapi profesional di pusat kota Bandung. Terapis berpengalaman 15+ tahun. Atasi kecemasan, trauma, stres, dan luka batin. Booking via WhatsApp.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=DM+Serif+Display:ital@0;1&family=DM+Sans:wght@300;400;500&family=Instrument+Serif:ital@1&display=swap" rel="stylesheet">
+
+<style>
+  *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+  :root {
+    --ink: #1A1A18;
+    --ink-muted: #5A5A52;
+    --ink-faint: #9A9A90;
+    --paper: #F7F4EE;
+    --paper-warm: #EDE8DE;
+    --paper-dark: #E0D8CA;
+    --accent: #3D5A47;
+    --accent-light: #6B8F74;
+    --accent-pale: #D4E2D8;
+    --gold: #B8923A;
+    --gold-pale: #F0E4C8;
+    --white: #FDFCF9;
+    --serif: 'DM Serif Display', serif;
+    --serif-italic: 'Instrument Serif', serif;
+    --sans: 'DM Sans', sans-serif;
+    --max: 1100px;
+    --radius: 3px;
+  }
+
+  html { scroll-behavior: smooth; }
+
+  body {
+    font-family: var(--sans);
+    background: var(--paper);
+    color: var(--ink);
+    font-size: 16px;
+    line-height: 1.7;
+    -webkit-font-smoothing: antialiased;
+  }
+
+  /* ─── NOISE TEXTURE OVERLAY ─── */
+  body::before {
+    content: '';
+    position: fixed;
+    inset: 0;
+    opacity: 0.025;
+    background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 256 256' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='noise'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.9' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23noise)'/%3E%3C/svg%3E");
+    pointer-events: none;
+    z-index: 0;
+  }
+
+  /* ─── NAV ─── */
+  .nav {
+    position: sticky;
+    top: 0;
+    z-index: 100;
+    background: rgba(247, 244, 238, 0.92);
+    backdrop-filter: blur(12px);
+    border-bottom: 1px solid var(--paper-dark);
+    padding: 14px 24px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+  }
+  .nav-brand {
+    font-family: var(--serif);
+    font-size: 15px;
+    color: var(--accent);
+    letter-spacing: 0.5px;
+  }
+  .nav-cta {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    background: var(--accent);
+    color: var(--white);
+    text-decoration: none;
+    padding: 9px 20px;
+    border-radius: 2px;
+    font-size: 13px;
+    font-weight: 500;
+    letter-spacing: 0.3px;
+    transition: background 0.2s;
+  }
+  .nav-cta:hover { background: #2d4435; }
+  .nav-cta svg { width: 16px; height: 16px; }
+
+  /* ─── HERO ─── */
+  .hero {
+    min-height: 95vh;
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    position: relative;
+    overflow: hidden;
+  }
+
+  .hero-left {
+    background: var(--accent);
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    padding: 80px 64px 80px 80px;
+    position: relative;
+  }
+  .hero-left::after {
+    content: '';
+    position: absolute;
+    right: -40px;
+    top: 0;
+    bottom: 0;
+    width: 80px;
+    background: var(--accent);
+    clip-path: polygon(0 0, 0% 100%, 100% 50%);
+    z-index: 2;
+  }
+
+  .hero-eyebrow {
+    display: inline-block;
+    font-size: 11px;
+    letter-spacing: 3px;
+    text-transform: uppercase;
+    color: var(--accent-pale);
+    margin-bottom: 28px;
+    font-weight: 400;
+  }
+  .hero-title {
+    font-family: var(--serif);
+    font-size: clamp(2.8rem, 4.5vw, 4rem);
+    color: var(--white);
+    line-height: 1.12;
+    margin-bottom: 12px;
+  }
+  .hero-title em {
+    font-family: var(--serif-italic);
+    font-style: italic;
+    color: #B8D4BE;
+  }
+  .hero-subtitle {
+    font-size: 15px;
+    color: rgba(255,255,255,0.65);
+    margin-bottom: 40px;
+    max-width: 340px;
+    line-height: 1.75;
+  }
+  .hero-actions {
+    display: flex;
+    flex-direction: column;
+    gap: 12px;
+    align-items: flex-start;
+  }
+  .btn-primary {
+    display: inline-flex;
+    align-items: center;
+    gap: 10px;
+    background: var(--white);
+    color: var(--accent);
+    padding: 15px 28px;
+    border-radius: 2px;
+    text-decoration: none;
+    font-weight: 500;
+    font-size: 14px;
+    letter-spacing: 0.2px;
+    transition: transform 0.15s, box-shadow 0.15s;
+  }
+  .btn-primary:hover { transform: translateY(-1px); box-shadow: 0 6px 20px rgba(0,0,0,0.15); }
+  .btn-primary svg { width: 18px; height: 18px; }
+
+  .hero-trust {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    color: rgba(255,255,255,0.5);
+    font-size: 12px;
+  }
+  .hero-trust span { color: rgba(255,255,255,0.7); font-weight: 500; }
+
+  .hero-right {
+    background: var(--paper-warm);
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-end;
+    padding: 60px 80px 60px 100px;
+    position: relative;
+  }
+
+  .stat-stack {
+    display: flex;
+    flex-direction: column;
+    gap: 32px;
+  }
+  .stat-item { border-left: 2px solid var(--accent-pale); padding-left: 20px; }
+  .stat-num {
+    font-family: var(--serif);
+    font-size: 2.8rem;
+    color: var(--accent);
+    line-height: 1;
+    margin-bottom: 4px;
+  }
+  .stat-label { font-size: 13px; color: var(--ink-muted); }
+
+  .hero-quote {
+    position: absolute;
+    top: 60px;
+    left: 100px;
+    right: 80px;
+    background: var(--white);
+    border: 1px solid var(--paper-dark);
+    padding: 24px 28px;
+    border-radius: var(--radius);
+  }
+  .hero-quote-mark {
+    font-family: var(--serif);
+    font-size: 3rem;
+    color: var(--accent-pale);
+    line-height: 0.5;
+    margin-bottom: 12px;
+    display: block;
+  }
+  .hero-quote-text {
+    font-family: var(--serif-italic);
+    font-style: italic;
+    font-size: 15px;
+    color: var(--ink-muted);
+    line-height: 1.6;
+    margin-bottom: 10px;
+  }
+  .hero-quote-source { font-size: 11px; color: var(--ink-faint); letter-spacing: 1px; text-transform: uppercase; }
+
+  .scroll-hint {
+    position: absolute;
+    bottom: 32px;
+    left: 80px;
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    color: rgba(255,255,255,0.4);
+    font-size: 11px;
+    letter-spacing: 1.5px;
+    text-transform: uppercase;
+    animation: bounce 2s infinite;
+  }
+  @keyframes bounce {
+    0%, 100% { transform: translateY(0); }
+    50% { transform: translateY(4px); }
+  }
+
+  /* ─── MARQUEE STRIP ─── */
+  .marquee-strip {
+    background: var(--ink);
+    color: var(--paper-warm);
+    padding: 14px 0;
+    overflow: hidden;
+    white-space: nowrap;
+  }
+  .marquee-inner {
+    display: inline-flex;
+    animation: marquee 28s linear infinite;
+    gap: 0;
+  }
+  .marquee-inner span {
+    font-size: 12px;
+    letter-spacing: 2px;
+    text-transform: uppercase;
+    padding: 0 32px;
+    opacity: 0.7;
+  }
+  .marquee-inner .dot {
+    color: var(--gold);
+    opacity: 1;
+    padding: 0;
+    margin: 0 -16px;
+    font-size: 16px;
+    vertical-align: middle;
+  }
+  @keyframes marquee { from { transform: translateX(0); } to { transform: translateX(-50%); } }
+
+  /* ─── SECTIONS ─── */
+  section { position: relative; }
+  .container { max-width: var(--max); margin: 0 auto; padding: 0 40px; }
+
+  /* ─── MASALAH ─── */
+  .masalah { background: var(--paper); padding: 100px 0; }
+  .section-header { margin-bottom: 60px; }
+  .section-tag {
+    display: inline-block;
+    font-size: 11px;
+    letter-spacing: 3px;
+    text-transform: uppercase;
+    color: var(--accent);
+    font-weight: 500;
+    margin-bottom: 16px;
+    border-bottom: 1px solid var(--accent-pale);
+    padding-bottom: 6px;
+  }
+  .section-title {
+    font-family: var(--serif);
+    font-size: clamp(2rem, 3.5vw, 2.8rem);
+    line-height: 1.15;
+    color: var(--ink);
+    max-width: 600px;
+  }
+  .section-title em {
+    font-family: var(--serif-italic);
+    font-style: italic;
+    color: var(--accent);
+  }
+
+  .masalah-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 1px;
+    background: var(--paper-dark);
+    border: 1px solid var(--paper-dark);
+  }
+  .masalah-item {
+    background: var(--white);
+    padding: 36px 32px;
+    transition: background 0.2s;
+  }
+  .masalah-item:hover { background: var(--paper-warm); }
+  .masalah-num {
+    font-family: var(--serif);
+    font-size: 2.5rem;
+    color: var(--paper-dark);
+    line-height: 1;
+    margin-bottom: 16px;
+  }
+  .masalah-title { font-weight: 500; margin-bottom: 8px; font-size: 15px; }
+  .masalah-desc { font-size: 14px; color: var(--ink-muted); line-height: 1.65; }
+
+  /* ─── PROSES ─── */
+  .proses { background: var(--ink); padding: 100px 0; }
+  .proses .section-tag { color: var(--accent-pale); border-color: rgba(255,255,255,0.1); }
+  .proses .section-title { color: var(--white); }
+  .proses .section-title em { color: #9FBD9E; }
+
+  .proses-layout {
+    display: grid;
+    grid-template-columns: 1fr 1.2fr;
+    gap: 80px;
+    align-items: start;
+  }
+  .proses-steps { display: flex; flex-direction: column; gap: 0; }
+  .proses-step {
+    display: grid;
+    grid-template-columns: 48px 1fr;
+    gap: 20px;
+    padding: 28px 0;
+    border-bottom: 1px solid rgba(255,255,255,0.06);
+    opacity: 0.5;
+    transition: opacity 0.3s;
+  }
+  .proses-step:last-child { border-bottom: none; }
+  .proses-step:hover, .proses-step.active { opacity: 1; }
+  .proses-step-num {
+    width: 48px;
+    height: 48px;
+    border: 1px solid rgba(255,255,255,0.15);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-family: var(--serif);
+    font-size: 1.1rem;
+    color: var(--accent-pale);
+    flex-shrink: 0;
+  }
+  .proses-step-title { font-weight: 500; color: var(--white); margin-bottom: 6px; }
+  .proses-step-desc { font-size: 14px; color: rgba(255,255,255,0.45); line-height: 1.65; }
+
+  .proses-card {
+    background: var(--accent);
+    padding: 48px;
+    position: sticky;
+    top: 80px;
+  }
+  .proses-card-tag { font-size: 11px; letter-spacing: 3px; text-transform: uppercase; color: var(--accent-pale); margin-bottom: 24px; }
+  .proses-card-title { font-family: var(--serif); font-size: 1.6rem; color: var(--white); margin-bottom: 20px; line-height: 1.3; }
+  .proses-card-list { list-style: none; display: flex; flex-direction: column; gap: 14px; }
+  .proses-card-list li {
+    display: flex;
+    align-items: flex-start;
+    gap: 12px;
+    font-size: 14px;
+    color: rgba(255,255,255,0.7);
+    line-height: 1.6;
+  }
+  .proses-card-list li::before {
+    content: '—';
+    color: var(--accent-pale);
+    flex-shrink: 0;
+    margin-top: 2px;
+  }
+  .proses-card-note {
+    margin-top: 32px;
+    padding-top: 24px;
+    border-top: 1px solid rgba(255,255,255,0.1);
+    font-size: 13px;
+    color: rgba(255,255,255,0.45);
+    font-style: italic;
+  }
+
+  /* ─── BIAYA ─── */
+  .biaya { background: var(--paper-warm); padding: 100px 0; }
+  .biaya-wrapper {
+    display: grid;
+    grid-template-columns: 1.2fr 1fr;
+    gap: 80px;
+    align-items: center;
+  }
+  .biaya-card {
+    background: var(--white);
+    border: 1px solid var(--paper-dark);
+    padding: 52px;
+    position: relative;
+    overflow: hidden;
+  }
+  .biaya-card::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    height: 3px;
+    background: var(--accent);
+  }
+  .biaya-badge {
+    display: inline-block;
+    background: var(--gold-pale);
+    color: var(--gold);
+    font-size: 11px;
+    letter-spacing: 2px;
+    text-transform: uppercase;
+    padding: 6px 14px;
+    margin-bottom: 28px;
+    font-weight: 500;
+  }
+  .biaya-name { font-family: var(--serif); font-size: 1.3rem; color: var(--ink); margin-bottom: 12px; }
+  .biaya-price {
+    font-family: var(--serif);
+    font-size: 3.2rem;
+    color: var(--accent);
+    line-height: 1;
+    margin-bottom: 4px;
+  }
+  .biaya-price-sub { font-size: 13px; color: var(--ink-faint); margin-bottom: 36px; }
+  .biaya-includes { list-style: none; display: flex; flex-direction: column; gap: 14px; margin-bottom: 36px; }
+  .biaya-includes li {
+    display: flex;
+    align-items: flex-start;
+    gap: 12px;
+    font-size: 14px;
+    color: var(--ink-muted);
+    line-height: 1.55;
+  }
+  .check {
+    width: 18px;
+    height: 18px;
+    background: var(--accent-pale);
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-shrink: 0;
+    margin-top: 2px;
+  }
+  .check svg { width: 10px; height: 10px; stroke: var(--accent); }
+  .biaya-cta {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 10px;
+    background: var(--accent);
+    color: var(--white);
+    padding: 16px 32px;
+    text-decoration: none;
+    font-weight: 500;
+    font-size: 14px;
+    width: 100%;
+    border-radius: 2px;
+    transition: background 0.2s;
+    letter-spacing: 0.2px;
+  }
+  .biaya-cta:hover { background: #2d4435; }
+  .biaya-cta svg { width: 18px; height: 18px; }
+
+  .biaya-text .section-header { margin-bottom: 32px; }
+  .biaya-note {
+    background: var(--paper);
+    border-left: 3px solid var(--accent-pale);
+    padding: 20px 24px;
+    font-size: 14px;
+    color: var(--ink-muted);
+    line-height: 1.65;
+    margin-top: 24px;
+  }
+  .biaya-note strong { color: var(--accent); font-weight: 500; }
+
+  /* ─── TESTIMONI ─── */
+  .testimoni { background: var(--paper); padding: 100px 0; }
+  .testi-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 24px;
+  }
+  .testi-card {
+    background: var(--white);
+    border: 1px solid var(--paper-dark);
+    padding: 32px;
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+    transition: transform 0.2s, box-shadow 0.2s;
+  }
+  .testi-card:hover { transform: translateY(-3px); box-shadow: 0 12px 40px rgba(0,0,0,0.06); }
+  .testi-stars { display: flex; gap: 3px; }
+  .testi-stars span { color: var(--gold); font-size: 14px; }
+  .testi-text {
+    font-family: var(--serif-italic);
+    font-style: italic;
+    font-size: 15px;
+    color: var(--ink-muted);
+    line-height: 1.7;
+    flex: 1;
+  }
+  .testi-author { border-top: 1px solid var(--paper-dark); padding-top: 16px; }
+  .testi-name { font-weight: 500; font-size: 14px; margin-bottom: 2px; }
+  .testi-from { font-size: 12px; color: var(--ink-faint); }
+
+  /* ─── TERAPIS ─── */
+  .terapis { background: var(--paper-warm); padding: 100px 0; }
+  .terapis-layout {
+    display: grid;
+    grid-template-columns: 1fr 1.5fr;
+    gap: 80px;
+    align-items: center;
+  }
+  .terapis-visual {
+    background: var(--accent);
+    aspect-ratio: 3/4;
+    position: relative;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    overflow: hidden;
+  }
+  .terapis-monogram {
+    font-family: var(--serif);
+    font-size: 8rem;
+    color: rgba(255,255,255,0.08);
+    line-height: 1;
+    user-select: none;
+  }
+  .terapis-badge {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    background: rgba(0,0,0,0.4);
+    padding: 20px 24px;
+    backdrop-filter: blur(8px);
+  }
+  .terapis-badge-title { font-size: 14px; color: var(--white); font-weight: 500; margin-bottom: 2px; }
+  .terapis-badge-sub { font-size: 12px; color: rgba(255,255,255,0.55); }
+
+  .terapis-exp { margin-bottom: 40px; }
+  .terapis-exp-num {
+    font-family: var(--serif);
+    font-size: 4rem;
+    color: var(--accent);
+    line-height: 1;
+  }
+  .terapis-exp-label { font-size: 14px; color: var(--ink-muted); }
+
+  .credentials { display: flex; flex-direction: column; gap: 16px; margin-bottom: 40px; }
+  .cred-item {
+    display: flex;
+    align-items: flex-start;
+    gap: 16px;
+    padding: 20px;
+    background: var(--white);
+    border: 1px solid var(--paper-dark);
+  }
+  .cred-icon {
+    width: 40px;
+    height: 40px;
+    background: var(--accent-pale);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-shrink: 0;
+    font-family: var(--serif);
+    font-size: 1.1rem;
+    color: var(--accent);
+  }
+  .cred-title { font-weight: 500; font-size: 14px; margin-bottom: 2px; }
+  .cred-sub { font-size: 12px; color: var(--ink-faint); }
+
+  /* ─── FAQ ─── */
+  .faq { background: var(--ink); padding: 100px 0; }
+  .faq .section-tag { color: var(--accent-pale); border-color: rgba(255,255,255,0.1); }
+  .faq .section-title { color: var(--white); }
+
+  .faq-layout {
+    display: grid;
+    grid-template-columns: 1fr 1.5fr;
+    gap: 80px;
+  }
+  .faq-list { display: flex; flex-direction: column; }
+  .faq-item { border-bottom: 1px solid rgba(255,255,255,0.06); }
+  .faq-q {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 16px;
+    padding: 22px 0;
+    cursor: pointer;
+    font-size: 15px;
+    color: rgba(255,255,255,0.7);
+    font-weight: 400;
+    user-select: none;
+    transition: color 0.2s;
+    list-style: none;
+  }
+  .faq-item.open .faq-q { color: var(--white); }
+  .faq-q-icon {
+    width: 24px;
+    height: 24px;
+    border: 1px solid rgba(255,255,255,0.15);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-shrink: 0;
+    transition: transform 0.3s, background 0.2s;
+    color: rgba(255,255,255,0.4);
+    font-size: 14px;
+  }
+  .faq-item.open .faq-q-icon { transform: rotate(45deg); background: var(--accent); color: white; border-color: var(--accent); }
+  .faq-a {
+    max-height: 0;
+    overflow: hidden;
+    transition: max-height 0.4s ease, padding 0.3s;
+    font-size: 14px;
+    color: rgba(255,255,255,0.45);
+    line-height: 1.75;
+  }
+  .faq-item.open .faq-a { max-height: 200px; padding-bottom: 22px; }
+
+  .faq-cta-box {
+    background: var(--accent);
+    padding: 48px;
+    height: fit-content;
+    position: sticky;
+    top: 80px;
+  }
+  .faq-cta-title { font-family: var(--serif); font-size: 1.8rem; color: var(--white); margin-bottom: 16px; line-height: 1.3; }
+  .faq-cta-desc { font-size: 14px; color: rgba(255,255,255,0.6); margin-bottom: 32px; line-height: 1.7; }
+  .faq-cta-btn {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 10px;
+    background: var(--white);
+    color: var(--accent);
+    padding: 16px 28px;
+    text-decoration: none;
+    font-weight: 500;
+    font-size: 14px;
+    width: 100%;
+    border-radius: 2px;
+    transition: transform 0.15s;
+  }
+  .faq-cta-btn:hover { transform: translateY(-1px); }
+  .faq-cta-btn svg { width: 18px; height: 18px; }
+  .faq-cta-note { text-align: center; font-size: 12px; color: rgba(255,255,255,0.3); margin-top: 16px; }
+
+  /* ─── LOKASI ─── */
+  .lokasi { background: var(--paper-warm); padding: 80px 0; }
+  .lokasi-inner {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 0;
+    border: 1px solid var(--paper-dark);
+    background: var(--white);
+  }
+  .lokasi-info { padding: 48px; border-right: 1px solid var(--paper-dark); }
+  .lokasi-info .section-tag { margin-bottom: 24px; }
+  .lokasi-detail { display: flex; flex-direction: column; gap: 20px; margin-top: 32px; }
+  .lokasi-row {
+    display: flex;
+    align-items: flex-start;
+    gap: 14px;
+    font-size: 14px;
+    color: var(--ink-muted);
+  }
+  .lokasi-row svg { width: 18px; height: 18px; flex-shrink: 0; margin-top: 1px; stroke: var(--accent); }
+  .lokasi-row strong { color: var(--ink); font-weight: 500; }
+  .lokasi-map {
+    background: var(--paper-dark);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    min-height: 320px;
+    position: relative;
+    overflow: hidden;
+  }
+  .lokasi-map-bg {
+    position: absolute;
+    inset: 0;
+    background: repeating-linear-gradient(
+      0deg, transparent, transparent 39px, var(--paper-warm) 39px, var(--paper-warm) 40px
+    ),
+    repeating-linear-gradient(
+      90deg, transparent, transparent 39px, var(--paper-warm) 39px, var(--paper-warm) 40px
+    );
+    opacity: 0.5;
+  }
+  .lokasi-pin {
+    position: relative;
+    z-index: 2;
+    text-align: center;
+  }
+  .lokasi-pin-dot {
+    width: 48px;
+    height: 48px;
+    background: var(--accent);
+    border-radius: 50% 50% 50% 0;
+    transform: rotate(-45deg);
+    margin: 0 auto 8px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+  .lokasi-pin-dot::after {
+    content: '';
+    width: 16px;
+    height: 16px;
+    background: white;
+    border-radius: 50%;
+    transform: rotate(45deg);
+  }
+  .lokasi-pin-label {
+    background: var(--white);
+    padding: 8px 16px;
+    font-size: 12px;
+    font-weight: 500;
+    color: var(--accent);
+    border: 1px solid var(--paper-dark);
+  }
+
+  /* ─── FOOTER ─── */
+  footer {
+    background: var(--ink);
+    padding: 60px 0 32px;
+  }
+  .footer-inner {
+    display: grid;
+    grid-template-columns: 1.5fr 1fr 1fr;
+    gap: 48px;
+    margin-bottom: 48px;
+  }
+  .footer-brand {
+    font-family: var(--serif);
+    font-size: 1.2rem;
+    color: var(--white);
+    margin-bottom: 16px;
+  }
+  .footer-tagline { font-size: 13px; color: rgba(255,255,255,0.35); line-height: 1.65; max-width: 280px; }
+  .footer-heading { font-size: 11px; letter-spacing: 2px; text-transform: uppercase; color: rgba(255,255,255,0.35); margin-bottom: 16px; font-weight: 400; }
+  .footer-links { list-style: none; display: flex; flex-direction: column; gap: 10px; }
+  .footer-links a { font-size: 13px; color: rgba(255,255,255,0.5); text-decoration: none; transition: color 0.2s; }
+  .footer-links a:hover { color: var(--white); }
+  .footer-bottom {
+    padding-top: 24px;
+    border-top: 1px solid rgba(255,255,255,0.06);
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    font-size: 12px;
+    color: rgba(255,255,255,0.2);
+  }
+
+  /* ─── FLOATING WA ─── */
+  .wa-float {
+    position: fixed;
+    bottom: 28px;
+    right: 28px;
+    z-index: 999;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-end;
+    gap: 10px;
+  }
+  .wa-tooltip {
+    background: var(--white);
+    border: 1px solid var(--paper-dark);
+    padding: 10px 16px;
+    font-size: 13px;
+    color: var(--ink-muted);
+    border-radius: 2px;
+    white-space: nowrap;
+    box-shadow: 0 4px 16px rgba(0,0,0,0.08);
+    animation: fadeIn 0.3s ease 1s both;
+  }
+  .wa-btn {
+    width: 56px;
+    height: 56px;
+    background: #25D366;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-decoration: none;
+    box-shadow: 0 4px 20px rgba(37,211,102,0.4);
+    transition: transform 0.2s, box-shadow 0.2s;
+  }
+  .wa-btn:hover { transform: scale(1.08); box-shadow: 0 6px 24px rgba(37,211,102,0.5); }
+  .wa-btn svg { width: 28px; height: 28px; fill: white; }
+  @keyframes fadeIn { from { opacity: 0; transform: translateX(8px); } to { opacity: 1; transform: translateX(0); } }
+
+  /* ─── ANIMATIONS ─── */
+  .reveal {
+    opacity: 0;
+    transform: translateY(24px);
+    transition: opacity 0.7s ease, transform 0.7s ease;
+  }
+  .reveal.visible { opacity: 1; transform: translateY(0); }
+
+  /* ─── MOBILE ─── */
+  @media (max-width: 768px) {
+    .container { padding: 0 20px; }
+    .hero { grid-template-columns: 1fr; min-height: auto; }
+    .hero-left { padding: 80px 28px 60px; }
+    .hero-left::after { display: none; }
+    .hero-right { display: none; }
+    .masalah-grid { grid-template-columns: 1fr; }
+    .proses-layout { grid-template-columns: 1fr; }
+    .proses-card { position: static; }
+    .biaya-wrapper { grid-template-columns: 1fr; gap: 40px; }
+    .testi-grid { grid-template-columns: 1fr; }
+    .terapis-layout { grid-template-columns: 1fr; }
+    .terapis-visual { max-height: 280px; }
+    .faq-layout { grid-template-columns: 1fr; }
+    .faq-cta-box { position: static; }
+    .lokasi-inner { grid-template-columns: 1fr; }
+    .lokasi-info { border-right: none; border-bottom: 1px solid var(--paper-dark); }
+    .footer-inner { grid-template-columns: 1fr; gap: 32px; }
+    .footer-bottom { flex-direction: column; gap: 8px; text-align: center; }
+    .nav-cta { padding: 8px 14px; font-size: 12px; }
+  }
+</style>
+</head>
+<body>
+
+<!-- NAV -->
+<nav class="nav">
+  <div class="nav-brand">Layanan Hipnoterapi — Bandung</div>
+  <a href="https://wa.me/6285172003369?text=Halo%2C%20saya%20ingin%20tanya%20tentang%20layanan%20hipnoterapi" class="nav-cta" target="_blank">
+    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M22 16.92v3a2 2 0 01-2.18 2 19.79 19.79 0 01-8.63-3.07A19.5 19.5 0 013 7.73a2 2 0 011.17-2.18A2 2 0 015.09 5.09v.01L5.72 7a2 2 0 01-.45 2.11L4.09 10.2a16 16 0 006.72 6.72l1.06-1.18A2 2 0 0114 15.29l2-.59a2 2 0 012.18 1.05 2 2 0 01-.18 1.17z"/></svg>
+    Konsultasi Awal
+  </a>
+</nav>
+
+<!-- HERO -->
+<section class="hero">
+  <div class="hero-left">
+    <span class="hero-eyebrow">Hipnoterapi Profesional · Bandung</span>
+    <h1 class="hero-title">
+      Saatnya berhenti<br>
+      bertahan.<br>
+      <em>Mulai pulih.</em>
+    </h1>
+    <p class="hero-subtitle">
+      Layanan hipnoterapi klinis untuk mereka yang lelah dengan kecemasan, luka masa lalu, dan pola pikir yang menahan hidup mereka.
+    </p>
+    <div class="hero-actions">
+      <a href="https://wa.me/6285172003369?text=Halo%2C%20saya%20ingin%20konsultasi%20layanan%20hipnoterapi" target="_blank" class="btn-primary">
+        <svg viewBox="0 0 24 24" fill="currentColor"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"/></svg>
+        Tanya Langsung via WhatsApp
+      </a>
+      <div class="hero-trust">
+        <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M22 11.08V12a10 10 0 11-5.93-9.14"/><polyline points="22 4 12 14.01 9 11.01"/></svg>
+        Lebih dari <span>500+ klien</span> terbantu sejak 2009
+      </div>
+    </div>
+    <div class="scroll-hint">
+      <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="6 9 12 15 18 9"/></svg>
+      Scroll untuk info
+    </div>
+  </div>
+  <div class="hero-right">
+    <div class="hero-quote">
+      <span class="hero-quote-mark">"</span>
+      <p class="hero-quote-text">Saya pikir saya hanya perlu lebih keras pada diri sendiri. Ternyata yang saya butuhkan adalah berdamai — dengan diri saya sendiri.</p>
+      <div class="hero-quote-source">— Klien, Buah Batu · 2024</div>
+    </div>
+    <div class="stat-stack">
+      <div class="stat-item">
+        <div class="stat-num">15+</div>
+        <div class="stat-label">Tahun pengalaman klinis aktif</div>
+      </div>
+      <div class="stat-item">
+        <div class="stat-num">500+</div>
+        <div class="stat-label">Sesi terapi individual berhasil</div>
+      </div>
+      <div class="stat-item">
+        <div class="stat-num">2×</div>
+        <div class="stat-label">Sesi untuk transformasi mendalam</div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- MARQUEE -->
+<div class="marquee-strip" aria-hidden="true">
+  <div class="marquee-inner">
+    <span>Hipnoterapi Bandung</span><span class="dot">·</span>
+    <span>Terapi Kecemasan</span><span class="dot">·</span>
+    <span>Healing Trauma</span><span class="dot">·</span>
+    <span>Inner Child Work</span><span class="dot">·</span>
+    <span>Regulasi Emosi</span><span class="dot">·</span>
+    <span>Terapis Berpengalaman</span><span class="dot">·</span>
+    <span>Pusat Kota Bandung</span><span class="dot">·</span>
+    <span>Hipnoterapi Klinis</span><span class="dot">·</span>
+    <span>Subconscious Healing</span><span class="dot">·</span>
+    <span>Transformasi Diri</span><span class="dot">·</span>
+    <!-- duplicate for seamless loop -->
+    <span>Hipnoterapi Bandung</span><span class="dot">·</span>
+    <span>Terapi Kecemasan</span><span class="dot">·</span>
+    <span>Healing Trauma</span><span class="dot">·</span>
+    <span>Inner Child Work</span><span class="dot">·</span>
+    <span>Regulasi Emosi</span><span class="dot">·</span>
+    <span>Terapis Berpengalaman</span><span class="dot">·</span>
+    <span>Pusat Kota Bandung</span><span class="dot">·</span>
+    <span>Hipnoterapi Klinis</span><span class="dot">·</span>
+    <span>Subconscious Healing</span><span class="dot">·</span>
+    <span>Transformasi Diri</span><span class="dot">·</span>
+  </div>
+</div>
+
+<!-- MASALAH -->
+<section class="masalah">
+  <div class="container">
+    <div class="section-header reveal">
+      <div class="section-tag">Apakah ini yang Anda rasakan?</div>
+      <h2 class="section-title">Tanda bahwa Anda butuh<br><em>ruang untuk sembuh</em></h2>
+    </div>
+    <div class="masalah-grid reveal">
+      <div class="masalah-item">
+        <div class="masalah-num">01</div>
+        <div class="masalah-title">Cemas berlebihan & sulit berhenti overthinking</div>
+        <div class="masalah-desc">Pikiran tidak bisa berhenti. Skenario terburuk terus berputar. Anda lelah, tapi tidak bisa beristirahat sungguh-sungguh.</div>
+      </div>
+      <div class="masalah-item">
+        <div class="masalah-num">02</div>
+        <div class="masalah-title">Terbebani oleh luka masa lalu & trauma</div>
+        <div class="masalah-desc">Peristiwa lama terus menghantui dan mempengaruhi keputusan hari ini. Anda tahu harus melepaskan — tapi tidak tahu caranya.</div>
+      </div>
+      <div class="masalah-item">
+        <div class="masalah-num">03</div>
+        <div class="masalah-title">Emosi yang sulit dikontrol atau dimengerti</div>
+        <div class="masalah-desc">Mudah meledak, mudah menangis tanpa alasan, atau justru mati rasa. Anda merasa tidak mengenali diri sendiri lagi.</div>
+      </div>
+      <div class="masalah-item">
+        <div class="masalah-num">04</div>
+        <div class="masalah-title">Kepercayaan diri yang terus runtuh</div>
+        <div class="masalah-desc">Selalu merasa tidak cukup. Membandingkan diri. Sulit mengambil keputusan karena takut salah dan dihakimi.</div>
+      </div>
+      <div class="masalah-item">
+        <div class="masalah-num">05</div>
+        <div class="masalah-title">Pola hubungan yang selalu berulang & menyakitkan</div>
+        <div class="masalah-desc">Selalu berakhir dengan orang yang sama, situasi yang sama. Anda tahu polanya — tapi tidak bisa keluar dari sana.</div>
+      </div>
+      <div class="masalah-item">
+        <div class="masalah-num">06</div>
+        <div class="masalah-title">Kelelahan emosional yang dalam & burnout</div>
+        <div class="masalah-desc">Secara fisik masih berfungsi, tapi di dalam terasa kosong. Motivasi habis. Semua terasa berat tanpa alasan yang jelas.</div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- PROSES -->
+<section class="proses">
+  <div class="container">
+    <div class="proses-layout">
+      <div>
+        <div class="section-header reveal">
+          <div class="section-tag">Bagaimana prosesnya</div>
+          <h2 class="section-title">Perjalanan dua sesi<br><em>menuju perubahan nyata</em></h2>
+        </div>
+        <div class="proses-steps reveal">
+          <div class="proses-step active">
+            <div class="proses-step-num">1</div>
+            <div>
+              <div class="proses-step-title">Konsultasi & Asesmen Awal</div>
+              <div class="proses-step-desc">Sebelum sesi dimulai, terapis memahami kondisi, latar belakang, dan tujuan Anda secara mendalam. Tidak ada yang terburu-buru.</div>
+            </div>
+          </div>
+          <div class="proses-step">
+            <div class="proses-step-num">2</div>
+            <div>
+              <div class="proses-step-title">Sesi Pertama — Pemetaan & Akses Bawah Sadar</div>
+              <div class="proses-step-desc">Dengan teknik induksi lembut, terapis membimbing Anda memasuki kondisi relaksasi mendalam untuk menemukan akar masalah.</div>
+            </div>
+          </div>
+          <div class="proses-step">
+            <div class="proses-step-num">3</div>
+            <div>
+              <div class="proses-step-title">Sesi Kedua — Transformasi & Penguatan</div>
+              <div class="proses-step-desc">Sesi lanjutan untuk memperkuat perubahan, menyelesaikan pekerjaan yang belum tuntas, dan menanamkan pola baru yang lebih sehat.</div>
+            </div>
+          </div>
+          <div class="proses-step">
+            <div class="proses-step-num">4</div>
+            <div>
+              <div class="proses-step-title">Tindak Lanjut & Pemantauan</div>
+              <div class="proses-step-desc">Setelah dua sesi, Anda mendapat panduan praktis untuk terus merawat perubahan yang telah dimulai dalam kehidupan sehari-hari.</div>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="proses-card reveal">
+        <div class="proses-card-tag">Yang Anda akan rasakan</div>
+        <h3 class="proses-card-title">Lebih dari sekadar relaksasi</h3>
+        <ul class="proses-card-list">
+          <li>Pemahaman mendalam tentang mengapa pola tertentu terus berulang dalam hidup Anda</li>
+          <li>Pelepasan emosi yang telah lama tertahan — bukan ditekan atau diabaikan</li>
+          <li>Perspektif baru terhadap situasi, hubungan, dan diri Anda sendiri</li>
+          <li>Kemampuan merespons — bukan bereaksi — terhadap pemicu emosional</li>
+          <li>Rasa ringan, jernih, dan terhubung kembali dengan diri sendiri</li>
+        </ul>
+        <div class="proses-card-note">Setiap sesi berlangsung 90–120 menit di ruang yang aman dan rahasia.</div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- BIAYA -->
+<section class="biaya" id="biaya">
+  <div class="container">
+    <div class="biaya-wrapper">
+      <div class="biaya-card reveal">
+        <div class="biaya-badge">Paket Lengkap</div>
+        <div class="biaya-name">Paket 2 Sesi Hipnoterapi</div>
+        <div class="biaya-price">Rp 2,5 jt</div>
+        <div class="biaya-price-sub">untuk 2 sesi terapi · bayar di awal</div>
+        <ul class="biaya-includes">
+          <li>
+            <div class="check"><svg viewBox="0 0 24 24" fill="none" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg></div>
+            2 sesi hipnoterapi klinis penuh (90–120 menit per sesi)
+          </li>
+          <li>
+            <div class="check"><svg viewBox="0 0 24 24" fill="none" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg></div>
+            Konsultasi pra-sesi & asesmen mendalam
+          </li>
+          <li>
+            <div class="check"><svg viewBox="0 0 24 24" fill="none" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg></div>
+            Dipandu oleh terapis berpengalaman 15+ tahun
+          </li>
+          <li>
+            <div class="check"><svg viewBox="0 0 24 24" fill="none" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg></div>
+            Panduan self-healing pasca sesi
+          </li>
+          <li>
+            <div class="check"><svg viewBox="0 0 24 24" fill="none" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg></div>
+            Lokasi nyaman di pusat kota Bandung
+          </li>
+          <li>
+            <div class="check"><svg viewBox="0 0 24 24" fill="none" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg></div>
+            Kerahasiaan klien 100% terjaga
+          </li>
+        </ul>
+        <a href="https://wa.me/6285172003369?text=Halo%2C%20saya%20tertarik%20dengan%20Paket%202%20Sesi%20Hipnoterapi.%20Apakah%20jadwal%20masih%20tersedia%3F" target="_blank" class="biaya-cta">
+          <svg viewBox="0 0 24 24" fill="currentColor" width="18" height="18"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"/></svg>
+          Cek Ketersediaan Jadwal
+        </a>
+      </div>
+      <div class="biaya-text reveal">
+        <div class="section-header">
+          <div class="section-tag">Investasi untuk diri sendiri</div>
+          <h2 class="section-title">Harga yang jelas,<br><em>tanpa biaya tersembunyi</em></h2>
+        </div>
+        <p style="font-size: 15px; color: var(--ink-muted); line-height: 1.8; margin-bottom: 20px;">
+          Satu paket mencakup dua sesi penuh yang saling melengkapi. Bukan karena dua itu "lebih banyak" — tapi karena transformasi yang nyata membutuhkan kedalaman, bukan kecepatan.
+        </p>
+        <div class="biaya-note">
+          <strong>Mengapa 2 sesi?</strong> Sesi pertama membuka dan memetakan. Sesi kedua memperdalam dan mengunci perubahan. Bersama, keduanya memberikan hasil yang jauh lebih solid dibanding satu sesi tunggal.
+        </div>
+        <div class="biaya-note" style="margin-top: 12px;">
+          <strong>Cara booking:</strong> Hubungi via WhatsApp untuk cek jadwal dan konsultasi singkat. Tidak ada tekanan untuk langsung memutuskan.
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- TESTIMONI -->
+<section class="testimoni">
+  <div class="container">
+    <div class="section-header reveal">
+      <div class="section-tag">Cerita dari klien</div>
+      <h2 class="section-title">Mereka sudah<br><em>merasakan perbedaannya</em></h2>
+    </div>
+    <div class="testi-grid">
+      <div class="testi-card reveal">
+        <div class="testi-stars"><span>★</span><span>★</span><span>★</span><span>★</span><span>★</span></div>
+        <div class="testi-text">Sudah 3 tahun saya hidup dengan kecemasan yang tidak bisa saya jelaskan. Setelah 2 sesi, saya akhirnya mengerti dari mana asalnya — dan bisa mulai melepasnya.</div>
+        <div class="testi-author">
+          <div class="testi-name">Andini R.</div>
+          <div class="testi-from">Dago, Bandung · Terapi kecemasan</div>
+        </div>
+      </div>
+      <div class="testi-card reveal">
+        <div class="testi-stars"><span>★</span><span>★</span><span>★</span><span>★</span><span>★</span></div>
+        <div class="testi-text">Saya datang karena tidak bisa move on dari hubungan yang toxic. Setelah sesi kedua, saya baru sadar bahwa masalahnya bukan dia — tapi luka yang belum selesai dari dulu.</div>
+        <div class="testi-author">
+          <div class="testi-name">Fariz M.</div>
+          <div class="testi-from">Antapani, Bandung · Terapi hubungan & pola emosi</div>
+        </div>
+      </div>
+      <div class="testi-card reveal">
+        <div class="testi-stars"><span>★</span><span>★</span><span>★</span><span>★</span><span>★</span></div>
+        <div class="testi-text">Awalnya saya skeptis — pikir ini semacam pertunjukan. Tapi proses sesinya sangat ilmiah, profesional, dan tidak terasa dipaksa sama sekali. Hasilnya nyata.</div>
+        <div class="testi-author">
+          <div class="testi-name">Sari W.</div>
+          <div class="testi-from">Setiabudi, Bandung · Burnout & kepercayaan diri</div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- TERAPIS -->
+<section class="terapis">
+  <div class="container">
+    <div class="terapis-layout">
+      <div class="reveal">
+        <div class="terapis-visual">
+          <div class="terapis-monogram">Ψ</div>
+          <div class="terapis-badge">
+            <div class="terapis-badge-title">Terapis Klinis Bersertifikat</div>
+            <div class="terapis-badge-sub">Aktif sejak 2009 · Pusat Kota Bandung</div>
+          </div>
+        </div>
+      </div>
+      <div class="reveal">
+        <div class="section-header">
+          <div class="section-tag">Tentang terapis</div>
+          <h2 class="section-title">Berpengalaman.<br><em>Bukan sekadar bersertifikat.</em></h2>
+        </div>
+        <div class="terapis-exp">
+          <div class="terapis-exp-num">15+</div>
+          <div class="terapis-exp-label">Tahun pengalaman klinis aktif di Bandung</div>
+        </div>
+        <div class="credentials">
+          <div class="cred-item">
+            <div class="cred-icon">NGH</div>
+            <div>
+              <div class="cred-title">Member — National Guild of Hypnotists, USA</div>
+              <div class="cred-sub">Asosiasi hipnoterapis klinis terbesar dan tertua di dunia · sejak 2009</div>
+            </div>
+          </div>
+          <div class="cred-item">
+            <div class="cred-icon">NLP</div>
+            <div>
+              <div class="cred-title">NLP Master Practitioner</div>
+              <div class="cred-sub">Pendekatan terintegrasi: hipnoterapi klinis + NLP + pendampingan emosional</div>
+            </div>
+          </div>
+          <div class="cred-item">
+            <div class="cred-icon">✓</div>
+            <div>
+              <div class="cred-title">Terapis Aktif & Pendidik Klinis</div>
+              <div class="cred-sub">Asesor Kemdikbud RI (2024–2028) · Klien korporat: Pertamina, BCA, Telkomsel</div>
+            </div>
+          </div>
+        </div>
+        <a href="https://wa.me/6285172003369?text=Halo%2C%20saya%20ingin%20mengenal%20lebih%20lanjut%20tentang%20terapis%20dan%20layanannya" target="_blank" style="display:inline-flex; align-items:center; gap:8px; color:var(--accent); font-size:14px; font-weight:500; text-decoration:none; border-bottom:1px solid var(--accent-pale); padding-bottom:4px;">
+          Tanya langsung via WhatsApp
+          <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
+        </a>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- FAQ -->
+<section class="faq">
+  <div class="container">
+    <div class="faq-layout">
+      <div>
+        <div class="section-header reveal">
+          <div class="section-tag">Pertanyaan umum</div>
+          <h2 class="section-title">Yang sering<br><em>ditanyakan</em></h2>
+        </div>
+        <div class="faq-list reveal">
+          <div class="faq-item open">
+            <div class="faq-q" onclick="toggleFaq(this)">
+              Apakah hipnoterapi aman?
+              <span class="faq-q-icon">+</span>
+            </div>
+            <div class="faq-a">Hipnoterapi klinis adalah prosedur yang aman dan tidak berbahaya. Anda tetap sadar dan bisa menghentikan sesi kapan saja. Terapis tidak bisa memaksa Anda melakukan sesuatu yang bertentangan dengan kehendak Anda.</div>
+          </div>
+          <div class="faq-item">
+            <div class="faq-q" onclick="toggleFaq(this)">
+              Apakah hipnoterapi bertentangan dengan agama?
+              <span class="faq-q-icon">+</span>
+            </div>
+            <div class="faq-a">Hipnoterapi klinis adalah teknik ilmiah berbasis relaksasi dan akses pikiran bawah sadar — bukan ritual, bukan klenik. MUI telah menyatakan hipnoterapi yang dilakukan secara profesional tidak bertentangan dengan ajaran Islam.</div>
+          </div>
+          <div class="faq-item">
+            <div class="faq-q" onclick="toggleFaq(this)">
+              Apakah saya akan kehilangan kesadaran?
+              <span class="faq-q-icon">+</span>
+            </div>
+            <div class="faq-a">Tidak. Hipnoterapi bukan tidur dan bukan pingsan. Anda masuk ke kondisi relaksasi yang dalam — mirip seperti kondisi tepat sebelum tidur — namun tetap sadar dan bisa mendengar dengan jelas.</div>
+          </div>
+          <div class="faq-item">
+            <div class="faq-q" onclick="toggleFaq(this)">
+              Apakah hasilnya permanen?
+              <span class="faq-q-icon">+</span>
+            </div>
+            <div class="faq-a">Perubahan yang terjadi melalui hipnoterapi bisa sangat bertahan lama — bahkan permanen — jika klien aktif merawat dan menerapkan panduan yang diberikan pasca sesi. Bukan sulap, tapi perubahan nyata di level bawah sadar.</div>
+          </div>
+          <div class="faq-item">
+            <div class="faq-q" onclick="toggleFaq(this)">
+              Apakah semua orang bisa dihipnosis?
+              <span class="faq-q-icon">+</span>
+            </div>
+            <div class="faq-a">Sebagian besar orang bisa mengalami kondisi hipnosis. Kemampuan ini meningkat dengan kepercayaan dan kemauan untuk mengikuti proses. Terapis kami berpengalaman membantu klien dari berbagai latar belakang dan tingkat sugesti.</div>
+          </div>
+          <div class="faq-item">
+            <div class="faq-q" onclick="toggleFaq(this)">
+              Bagaimana cara memulai?
+              <span class="faq-q-icon">+</span>
+            </div>
+            <div class="faq-a">Cukup hubungi kami via WhatsApp. Anda akan mendapat sesi tanya-jawab singkat untuk memastikan kecocokan, kemudian kami atur jadwal bersama. Tidak ada tekanan untuk langsung memutuskan.</div>
+          </div>
+        </div>
+      </div>
+      <div class="faq-cta-box reveal">
+        <div class="faq-cta-title">Masih ada pertanyaan lain?</div>
+        <div class="faq-cta-desc">Tanyakan langsung kepada kami — tidak ada pertanyaan yang terlalu kecil atau terlalu personal. Konsultasi awal gratis, tanpa komitmen.</div>
+        <a href="https://wa.me/6285172003369?text=Halo%2C%20saya%20punya%20beberapa%20pertanyaan%20sebelum%20memutuskan%20untuk%20terapi" target="_blank" class="faq-cta-btn">
+          <svg viewBox="0 0 24 24" fill="currentColor" width="18" height="18"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"/></svg>
+          Tanya via WhatsApp
+        </a>
+        <div class="faq-cta-note">Biasanya dibalas dalam 1–2 jam</div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- LOKASI -->
+<section class="lokasi">
+  <div class="container">
+    <div class="lokasi-inner">
+      <div class="lokasi-info">
+        <div class="section-tag">Lokasi & Jadwal</div>
+        <h3 style="font-family: var(--serif); font-size: 1.6rem; line-height: 1.25; margin-bottom: 8px;">Ruang terapi yang nyaman<br>di pusat kota Bandung</h3>
+        <div class="lokasi-detail">
+          <div class="lokasi-row">
+            <svg viewBox="0 0 24 24" fill="none" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0118 0z"/><circle cx="12" cy="10" r="3"/></svg>
+            <div><strong>Pusat Kota Bandung</strong><br>Area Coblong — mudah dijangkau dari seluruh penjuru Bandung</div>
+          </div>
+          <div class="lokasi-row">
+            <svg viewBox="0 0 24 24" fill="none" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"/><polyline points="12 6 12 12 16 14"/></svg>
+            <div><strong>Senin – Sabtu</strong><br>09.00 – 18.00 WIB · Dengan perjanjian</div>
+          </div>
+          <div class="lokasi-row">
+            <svg viewBox="0 0 24 24" fill="none" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="M22 16.92v3a2 2 0 01-2.18 2 19.79 19.79 0 01-8.63-3.07A19.5 19.5 0 013 7.73a2 2 0 011.17-2.18L5.72 7a2 2 0 01-.45 2.11L4.09 10.2a16 16 0 006.72 6.72l1.06-1.18A2 2 0 0114 15.29l2-.59a2 2 0 012.18 1.05 2 2 0 01-.18 1.17z"/></svg>
+            <div><strong>0878-2882-7575</strong><br>WhatsApp tersedia untuk booking & pertanyaan</div>
+          </div>
+          <div class="lokasi-row">
+            <svg viewBox="0 0 24 24" fill="none" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="M3 9l9-7 9 7v11a2 2 0 01-2 2H5a2 2 0 01-2-2z"/><polyline points="9 22 9 12 15 12 15 22"/></svg>
+            <div><strong>Ruang Privat</strong><br>Sesi dilakukan di ruang tertutup yang tenang dan kondusif</div>
+          </div>
+        </div>
+      </div>
+      <div class="lokasi-map">
+        <div class="lokasi-map-bg"></div>
+        <div class="lokasi-pin">
+          <div class="lokasi-pin-dot"></div>
+          <div class="lokasi-pin-label">Pusat Kota Bandung</div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- FOOTER -->
+<footer>
+  <div class="container">
+    <div class="footer-inner">
+      <div>
+        <div class="footer-brand">Layanan Hipnoterapi Bandung</div>
+        <div class="footer-tagline">Layanan hipnoterapi klinis profesional untuk transformasi emosional yang nyata — di Bandung dan sekitarnya.</div>
+      </div>
+      <div>
+        <div class="footer-heading">Layanan</div>
+        <ul class="footer-links">
+          <li><a href="#">Terapi Kecemasan & Overthinking</a></li>
+          <li><a href="#">Healing Trauma & Luka Batin</a></li>
+          <li><a href="#">Regulasi Emosi</a></li>
+          <li><a href="#">Kepercayaan Diri</a></li>
+          <li><a href="#">Burnout & Kelelahan Emosi</a></li>
+        </ul>
+      </div>
+      <div>
+        <div class="footer-heading">Kontak</div>
+        <ul class="footer-links">
+          <li><a href="https://wa.me/6285172003369" target="_blank">WhatsApp: 0878-2882-7575</a></li>
+          <li><a href="#">Pusat Kota Bandung</a></li>
+          <li><a href="#">Senin – Sabtu, 09.00–18.00</a></li>
+        </ul>
+      </div>
+    </div>
+    <div class="footer-bottom">
+      <span>© 2025 Layanan Hipnoterapi Bandung. Semua hak dilindungi.</span>
+      <span>Kerahasiaan klien 100% terjaga</span>
+    </div>
+  </div>
+</footer>
+
+<!-- FLOATING WA -->
+<div class="wa-float">
+  <div class="wa-tooltip">Tanya gratis, tanpa komitmen</div>
+  <a href="https://wa.me/6285172003369?text=Halo%2C%20saya%20ingin%20konsultasi%20tentang%20layanan%20hipnoterapi%20di%20Bandung" target="_blank" class="wa-btn" aria-label="Chat WhatsApp">
+    <svg viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"/></svg>
+  </a>
+</div>
+
+<script>
+  // FAQ toggle
+  function toggleFaq(el) {
+    const item = el.closest('.faq-item');
+    const isOpen = item.classList.contains('open');
+    document.querySelectorAll('.faq-item.open').forEach(i => i.classList.remove('open'));
+    if (!isOpen) item.classList.add('open');
+  }
+
+  // Scroll reveal
+  const reveals = document.querySelectorAll('.reveal');
+  const observer = new IntersectionObserver((entries) => {
+    entries.forEach((entry, i) => {
+      if (entry.isIntersecting) {
+        setTimeout(() => entry.target.classList.add('visible'), i * 60);
+        observer.unobserve(entry.target);
+      }
+    });
+  }, { threshold: 0.1, rootMargin: '0px 0px -40px 0px' });
+  reveals.forEach(el => observer.observe(el));
+
+  // Active proses step on hover
+  document.querySelectorAll('.proses-step').forEach(step => {
+    step.addEventListener('mouseenter', () => {
+      document.querySelectorAll('.proses-step').forEach(s => s.classList.remove('active'));
+      step.classList.add('active');
+    });
+  });
+  // Keep first active on init
+  const firstStep = document.querySelector('.proses-step');
+  if (firstStep) firstStep.classList.add('active');
+</script>
+</body>
+</html>
